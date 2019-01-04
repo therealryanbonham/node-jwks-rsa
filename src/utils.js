@@ -47,7 +47,7 @@ export function rsaPublicKeyToPEM(modulusB64, exponentB64) {
     '02' + encodedModlen + modulusHex +
     '02' + encodedExplen + exponentHex;
 
-  const der = new Buffer(encodedPubkey, 'hex')
+  const der = Buffer.from(encodedPubkey, 'hex')
     .toString('base64');
 
   let pem = `-----BEGIN RSA PUBLIC KEY-----\n`;
